@@ -102,6 +102,7 @@ class MainViewController: UIViewController {
         
         tableView.reloadData()
         setupUserParameters()
+        getWeather()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -217,6 +218,22 @@ extension MainViewController: StartWorkoutProtocol {
             present(timerWorkoutViewController, animated: true)
         }
     }
+    
+    private func getWeather() {
+        NetworkDataFetch.shared.fetchWeather { [weak self] model, error in
+            guard let self = self else { return }
+            if error == nil {
+                guard let model = model else { return }
+                self.weatherView.weatherLabel.text = "\(model.currently.iconLocal) \(model.currently.temperatureCelsius)°C"
+                self.weatherView.weatherDetailsLabel.text = model.currently.description
+                
+                guard let imageIcon = model.currently.icon else { return }
+                self.weatherView.weatherImageView.image = UIImage(named: imageIcon)
+            } else {
+                self.alertOk(title: "Error", message: "No weather data")
+            }
+        }
+    }
 }
 
 //MARK: - SelectCollectionnViewItemProtocol
@@ -264,6 +281,7 @@ extension MainViewController: UITableViewDelegate {
         
         return UISwipeActionsConfiguration(actions: [action])
     }
+    
 }
 
 //MARK: - Set constrains

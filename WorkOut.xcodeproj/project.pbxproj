@@ -32,6 +32,9 @@
 		4C6DCCF527DBBE29007A195C /* ProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6DCCF427DBBE29007A195C /* ProfileViewCell.swift */; };
 		4C7655FE27CA7E7300FE6141 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7655FD27CA7E7300FE6141 /* RealmManager.swift */; };
 		4C76560127CA8BAF00FE6141 /* SimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C76560027CA8BAF00FE6141 /* SimpleAlert.swift */; };
+		4CB2CC6427F5F2EA0056F6A1 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2CC6327F5F2EA0056F6A1 /* NetworkRequest.swift */; };
+		4CB2CC6627F5F8390056F6A1 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2CC6527F5F8390056F6A1 /* NetworkDataFetch.swift */; };
+		4CB2CC6827F5F9230056F6A1 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2CC6727F5F9230056F6A1 /* WeatherModel.swift */; };
 		4CC01B0B27F3451D00900046 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC01B0A27F3451D00900046 /* Notifications.swift */; };
 		4CC01B0D27F35A1500900046 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC01B0C27F35A1500900046 /* OnboardingViewController.swift */; };
 		4CC01B1027F363F000900046 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC01B0F27F363F000900046 /* OnboardingCollectionViewCell.swift */; };
@@ -76,6 +79,9 @@
 		4C6DCCF427DBBE29007A195C /* ProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewCell.swift; sourceTree = "<group>"; };
 		4C7655FD27CA7E7300FE6141 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		4C76560027CA8BAF00FE6141 /* SimpleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlert.swift; sourceTree = "<group>"; };
+		4CB2CC6327F5F2EA0056F6A1 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		4CB2CC6527F5F8390056F6A1 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
+		4CB2CC6727F5F9230056F6A1 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		4CC01B0A27F3451D00900046 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		4CC01B0C27F35A1500900046 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		4CC01B0F27F363F000900046 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -168,6 +174,15 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
+		4CB2CC6227F5F2CC0056F6A1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4CB2CC6327F5F2EA0056F6A1 /* NetworkRequest.swift */,
+				4CB2CC6527F5F8390056F6A1 /* NetworkDataFetch.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		4CC01B0E27F363C900900046 /* OnboardingVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +215,7 @@
 				4CE064B327BC0C2A00FCADF0 /* Views */,
 				4C7655FF27CA8B7F00FE6141 /* Alerts */,
 				4CE064B127BC0C1800FCADF0 /* Controllers */,
+				4CB2CC6227F5F2CC0056F6A1 /* Network */,
 				4C7655FC27CA7E5800FE6141 /* Services */,
 				4CE064B427BC0C3A00FCADF0 /* Extension */,
 				4CE064B627BC0C7B00FCADF0 /* Resourses */,
@@ -222,6 +238,7 @@
 			children = (
 				4C0D5A7727E4B42900819CF1 /* UserModel.swift */,
 				4C15F1E427C7E6F800B23350 /* WorkoutModel.swift */,
+				4CB2CC6727F5F9230056F6A1 /* WeatherModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -413,11 +430,14 @@
 				4C15F1D827C68B8700B23350 /* MainTabBarController.swift in Sources */,
 				4CE064C627BC3FCD00FCADF0 /* CalendarView.swift in Sources */,
 				4C6DCCEE27D9090E007A195C /* StatisticsTableViewCell.swift in Sources */,
+				4CB2CC6627F5F8390056F6A1 /* NetworkDataFetch.swift in Sources */,
 				4CE064BE27BC0DAD00FCADF0 /* UIStackView + Extensions.swift in Sources */,
 				4C15F1CD27C3FD4D00B23350 /* WorkoutTableViewCell.swift in Sources */,
 				4C15F1D427C5651200B23350 /* DateAndRepeatView.swift in Sources */,
+				4CB2CC6427F5F2EA0056F6A1 /* NetworkRequest.swift in Sources */,
 				4C0D5A7827E4B42900819CF1 /* UserModel.swift in Sources */,
 				4C15F1E527C7E6F800B23350 /* WorkoutModel.swift in Sources */,
+				4CB2CC6827F5F9230056F6A1 /* WeatherModel.swift in Sources */,
 				4C15F1DC27C68EF200B23350 /* ProfileViewController.swift in Sources */,
 				4C0D5A7A27E6442000819CF1 /* GalleryAlert.swift in Sources */,
 				4CE064A027BC052500FCADF0 /* MainViewController.swift in Sources */,
