@@ -35,7 +35,7 @@ class WorkoutParametersView: UIView {
         return label
     }()
     
-     let numberOfSetsLabel: UILabel = {
+    let numberOfSetsLabel: UILabel = {
         let label = UILabel()
         label.text = "1/4"
         label.font = .robotoMedium24()
@@ -53,7 +53,7 @@ class WorkoutParametersView: UIView {
         return label
     }()
     
-     let numberOfRepsLabel: UILabel = {
+    let numberOfRepsLabel: UILabel = {
         let label = UILabel()
         label.text = "20"
         label.font = .robotoMedium24()
@@ -63,14 +63,14 @@ class WorkoutParametersView: UIView {
     }()
     
     private let repsLineView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = .specialLine
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private let setsLineView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = .specialLine
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -147,7 +147,6 @@ class WorkoutParametersView: UIView {
     }
     
     private func setConstraints() {
-        
         NSLayoutConstraint.activate([
             workoutNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             workoutNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
@@ -197,10 +196,3 @@ class WorkoutParametersView: UIView {
         ])
     }
 }
-
-
-
-
-
-
-

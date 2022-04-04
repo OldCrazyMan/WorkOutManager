@@ -16,6 +16,6 @@ extension Int {
     }
     
     func setZeroForSecounds() -> String {
-    return (Double(self) / 10.0 < 1 ? "0\(self)" : "\(self)")
-}
+        return (Double(self) / 10.0 < 1 ? "0\(self)" : "\(self)")
+    }
 }

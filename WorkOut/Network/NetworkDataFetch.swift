@@ -10,8 +10,8 @@ import Foundation
 class NetworkDataFetch {
     
     static let shared = NetworkDataFetch()
-        private init() {}
-        
+    private init() {}
+    
     func fetchWeather(responce: @escaping (WeatherModel?, Error?) -> Void) {
         NetworkRequest.shared.request { result in
             
@@ -28,7 +28,5 @@ class NetworkDataFetch {
                 responce(nil, error)
             }
         }
-    
-    
-}
+    }
 }

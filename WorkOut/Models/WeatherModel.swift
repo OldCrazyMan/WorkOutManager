@@ -37,16 +37,16 @@ struct Currently: Decodable {
     
     var description: String {
         switch icon {
-        case "clear-day": return "Ясно"
-        case "clear-night": return "Ясная ночь"
+        case "clear-day": return "Отличный день для прогулки"
+        case "clear-night": return ""
         case "rain": return "Лучше захватить с собой зонт"
-        case "snow": return "Снег"
-        case "sleet": return "Мокрый снег"
-        case "wind": return "Ветрено"
-        case "fog": return "Туман"
-        case "cloudy": return "Облачно, возможны осадки"
+        case "snow": return ""
+        case "sleet": return ""
+        case "wind": return ""
+        case "fog": return ""
+        case "cloudy": return "Возможны осадки"
         case "partly-cloudy-day": return "Отличный день для теплого чая"
-        case "partly-cloudy-night": return "Пасмурная ночь"
+        case "partly-cloudy-night": return ""
         default: return "No data"
         }
     }

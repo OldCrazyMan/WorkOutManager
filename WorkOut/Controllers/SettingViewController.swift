@@ -11,7 +11,7 @@ import RealmSwift
 class SettingViewController: UIViewController {
     
     private let editingProfileLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "EDITING PROFILE"
         label.font = .robotoMedium24()
         label.textColor = .specialGray
@@ -41,7 +41,7 @@ class SettingViewController: UIViewController {
     }()
     
     private let addPhotoView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = .specialGreen
         view.layer.cornerRadius = 10
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -156,7 +156,7 @@ class SettingViewController: UIViewController {
     private var weightStackView = UIStackView()
     private var targetStackView = UIStackView()
     private var generalStackView = UIStackView()
-
+    
     private let localRealm = try! Realm()
     private var userArray: Results<UserModel>!
     
@@ -165,10 +165,10 @@ class SettingViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         addPhotoImageView.layer.cornerRadius = addPhotoImageView.frame.height / 2
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupViews()
         setConstraints()
         addTaps()
@@ -192,26 +192,26 @@ class SettingViewController: UIViewController {
                                          spacing: 3)
         
         secondNameStackView = UIStackView(arrangedSubviews: [secondNameLabel, secondNameTextField],
-                                         axis: .vertical,
-                                         spacing: 3)
+                                          axis: .vertical,
+                                          spacing: 3)
         
         heightStackView = UIStackView(arrangedSubviews: [heightLabel, heightTextField],
-                                         axis: .vertical,
-                                         spacing: 3)
+                                      axis: .vertical,
+                                      spacing: 3)
         
         weightStackView = UIStackView(arrangedSubviews: [weightLabel, weightTextField],
-                                         axis: .vertical,
-                                         spacing: 3)
+                                      axis: .vertical,
+                                      spacing: 3)
         
         targetStackView = UIStackView(arrangedSubviews: [targetLabel, targetTextField],
-                                         axis: .vertical,
-                                         spacing: 3)
+                                      axis: .vertical,
+                                      spacing: 3)
         
         generalStackView = UIStackView(arrangedSubviews: [firstNameStackView,
-                                                         secondNameStackView,
-                                                         heightStackView,
-                                                         weightStackView,
-                                                         targetStackView],
+                                                          secondNameStackView,
+                                                          heightStackView,
+                                                          weightStackView,
+                                                          targetStackView],
                                        axis: .vertical,
                                        spacing: 20)
         view.addSubview(generalStackView)
@@ -223,9 +223,9 @@ class SettingViewController: UIViewController {
     }
     
     @objc private func saveButtonTapped() {
-       
+        
         setUserModel()
-
+        
         if userArray.count == 0 {
             RealmManager.shared.saveUserModel(model: userModel)
         } else {
@@ -242,7 +242,7 @@ class SettingViewController: UIViewController {
             heightTextField.text = "\(userArray[0].userHeight)"
             weightTextField.text = "\(userArray[0].userWeight)"
             targetTextField.text = "\(userArray[0].userTarget)"
-        
+            
             guard let data = userArray[0].userImage else { return }
             guard let image = UIImage(data: data) else { return }
             addPhotoImageView.image = image
@@ -257,14 +257,14 @@ class SettingViewController: UIViewController {
               let height = heightTextField.text,
               let weight = weightTextField.text,
               let target = targetTextField.text else {
-                  return
-              }
+            return
+        }
         
         guard let intHeight = Int(height),
               let intWeight = Int(weight),
               let intTarget = Int(target) else {
-                  return
-              }
+            return
+        }
         
         userModel.userFirstName = firstName
         userModel.userSecondName = secondName
@@ -294,7 +294,7 @@ class SettingViewController: UIViewController {
     }
 }
 
-//MARK: UIImagePickerControllerDelegate, UINavigationControllerDelegate
+//MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
 
 extension SettingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -322,12 +322,11 @@ extension SettingViewController: UIImagePickerControllerDelegate, UINavigationCo
 extension SettingViewController {
     
     private func setConstraints() {
-        
         NSLayoutConstraint.activate([
             editingProfileLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             editingProfileLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
-    
+        
         NSLayoutConstraint.activate([
             closeButton.centerYAnchor.constraint(equalTo: editingProfileLabel.centerYAnchor),
             closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
@@ -358,7 +357,7 @@ extension SettingViewController {
             
             generalStackView.topAnchor.constraint(equalTo: addPhotoView.bottomAnchor, constant: 20),
             generalStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            generalStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            generalStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
         
         NSLayoutConstraint.activate([

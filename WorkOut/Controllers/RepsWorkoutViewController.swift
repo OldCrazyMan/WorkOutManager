@@ -111,8 +111,8 @@ class RepsWorkoutViewController: UIViewController {
         workoutParametersView.numberOfSetsLabel.text = "\(numberOfSet)/\(workoutModel.workoutSets)"
         workoutParametersView.numberOfRepsLabel.text = "\(workoutModel.workoutReps)"
     }
-    
 }
+
 // MARK: - NextSetProtocol
 
 extension RepsWorkoutViewController: NextSetProtocol {
@@ -120,11 +120,11 @@ extension RepsWorkoutViewController: NextSetProtocol {
     func editingTapped() {
         customAlert.alertCustom(viewController: self, repsOrTimer: "Reps") { [self] sets, reps in
             if sets != "" && reps != "" {
-            workoutParametersView.numberOfSetsLabel.text = "\(numberOfSet)/\(sets)"
-            workoutParametersView.numberOfRepsLabel.text = reps
-            guard let numberOfSets = Int(sets) else { return }
-            guard let numberOfReps = Int(reps) else { return }
-            RealmManager.shared.updateSetsRepsWorkoutModel(model: workoutModel, sets: numberOfSets, reps: numberOfReps)
+                workoutParametersView.numberOfSetsLabel.text = "\(numberOfSet)/\(sets)"
+                workoutParametersView.numberOfRepsLabel.text = reps
+                guard let numberOfSets = Int(sets) else { return }
+                guard let numberOfReps = Int(reps) else { return }
+                RealmManager.shared.updateSetsRepsWorkoutModel(model: workoutModel, sets: numberOfSets, reps: numberOfReps)
             }
         }
     }
@@ -138,7 +138,9 @@ extension RepsWorkoutViewController: NextSetProtocol {
         }
     }
 }
+
 //MARK: - SetConstraints
+
 extension RepsWorkoutViewController {
     
     private func setConstraints() {

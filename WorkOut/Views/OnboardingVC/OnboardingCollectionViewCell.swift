@@ -10,14 +10,14 @@ import UIKit
 class OnboardingCollectionViewCell: UICollectionViewCell {
     
     private let backgroundImageView: UIImageView = {
-       let imageView = UIImageView()
+        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private let topLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.textColor = .specialGreen
         label.font = .robotoBold24()
         label.textAlignment = .center
@@ -26,7 +26,7 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     }()
     
     private let bottomLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.textColor = .white
         label.font = .robotoMedium16()
         label.textAlignment = .center
@@ -34,7 +34,7 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -52,7 +52,6 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         addSubview(backgroundImageView)
         addSubview(topLabel)
         addSubview(bottomLabel)
-       
     }
     
     func cellConfigure(model: OnboardingStruct) {
@@ -62,7 +61,6 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     }
     
     private func setConstraints() {
-      
         NSLayoutConstraint.activate([
             backgroundImageView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
@@ -82,6 +80,5 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
             bottomLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             bottomLabel.heightAnchor.constraint(equalToConstant: 85)
         ])
-        
     }
 }

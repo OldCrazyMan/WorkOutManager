@@ -84,10 +84,11 @@ class NewWorkoutViewController: UIViewController {
     
     private let dateAndRepeatView = DateAndRepeatView()
     private let repsOrTimerView = RepsOrTimerView()
-    private let localRealm = try! Realm()
-    private var workoutModel = WorkoutModel()
     
     private let testImage = UIImage(named: "testImage")
+    
+    private let localRealm = try! Realm()
+    private var workoutModel = WorkoutModel()
     
     override func viewDidLayoutSubviews() {
         closeButton.layer.cornerRadius = closeButton.frame.height / 2
@@ -106,7 +107,6 @@ class NewWorkoutViewController: UIViewController {
         view.backgroundColor = .specialBackground
         
         view.addSubview(scrollView)
-        
         scrollView.addSubview(newWorkoutLabel)
         scrollView.addSubview(closeButton)
         scrollView.addSubview(nameTextField)
@@ -131,8 +131,7 @@ class NewWorkoutViewController: UIViewController {
         saveModel()
     }
     
-    
-//MARK: - Closed/hide keyboard
+    //MARK: - Closed/hide keyboard
     
     private func addTaps() {
         let tapScreen = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -209,6 +208,7 @@ class NewWorkoutViewController: UIViewController {
 //MARK: - UITextFieldDelegate
 
 extension NewWorkoutViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nameTextField.resignFirstResponder()
     }
@@ -219,7 +219,6 @@ extension NewWorkoutViewController: UITextFieldDelegate {
 extension NewWorkoutViewController {
     
     private func setConstraints() {
-        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
@@ -282,8 +281,8 @@ extension NewWorkoutViewController {
             saveButton.topAnchor.constraint(equalTo: repsOrTimerView.bottomAnchor, constant: 20),
             saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            saveButton.heightAnchor.constraint(equalToConstant: 55),
-            saveButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20)
+            saveButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20),
+            saveButton.heightAnchor.constraint(equalToConstant: 55)
         ])
     }
 }

@@ -37,7 +37,6 @@ class TimerWorkoutViewController: UIViewController {
     
     private let timerLabel: UILabel = {
         let label = UILabel()
-       // label.text = "1:40"
         label.textColor = .specialBrown
         label.font = .robotoBold48()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -242,7 +241,6 @@ extension TimerWorkoutViewController {
 extension TimerWorkoutViewController {
     
     private func setConstraints() {
-        
         NSLayoutConstraint.activate([
             newWorkoutLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             newWorkoutLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)

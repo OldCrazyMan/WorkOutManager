@@ -118,7 +118,7 @@ class ProfileViewController: UIViewController {
     }()
     
     private let targetLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "TARGET: 0 workouts"
         label.font = .robotoBold16()
         label.textColor = .specialGray
@@ -127,7 +127,7 @@ class ProfileViewController: UIViewController {
     }()
     
     private let workoutsNowLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "0"
         label.font = .robotoBold24()
         label.textColor = .specialGray
@@ -136,7 +136,7 @@ class ProfileViewController: UIViewController {
     }()
     
     private let workoutsTargetLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "0"
         label.font = .robotoBold24()
         label.textColor = .specialGray
@@ -145,7 +145,7 @@ class ProfileViewController: UIViewController {
     }()
     
     private let targetView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.layer.cornerRadius = 15
         view.backgroundColor = .specialGreen
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -169,11 +169,11 @@ class ProfileViewController: UIViewController {
     private var userParamStackView = UIStackView()
     
     private let idProfileCollectionViewCell = "idProfileCollectionViewCell"
-
+    
     private let localRealm = try! Realm()
     private var workoutArray: Results<WorkoutModel>!
     private var userArray: Results<UserModel>!
-    
+
     private var resultWorkout = [ResultWorkout]()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -197,7 +197,7 @@ class ProfileViewController: UIViewController {
         setDelegates()
         getWorkoutResults()
     }
-        
+    
     private func setupView() {
         view.backgroundColor = .specialBackground
         
@@ -218,13 +218,13 @@ class ProfileViewController: UIViewController {
         view.addSubview(targetLabel)
         
         targetStackView = UIStackView(arrangedSubviews: [workoutsNowLabel, workoutsTargetLabel],
-                                         axis: .horizontal,
-                                         spacing: 10)
+                                      axis: .horizontal,
+                                      spacing: 10)
         view.addSubview(targetStackView)
         view.addSubview(targetView)
         
         view.addSubview(progressView)
-       
+        
     }
     
     private func setDelegates() {
@@ -283,7 +283,6 @@ class ProfileViewController: UIViewController {
             resultWorkout.append(resultModel)
         }
     }
-    
 }
 
 //MARK: - UICollectionViewDataSource
@@ -320,12 +319,12 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout {
         progressView.setProgress(0.6, animated: true)
     }
 }
+
 //MARK: - SetConstraints
 
 extension ProfileViewController {
     
     private func setConstraints() {
-        
         NSLayoutConstraint.activate([
             profileLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             profileLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)

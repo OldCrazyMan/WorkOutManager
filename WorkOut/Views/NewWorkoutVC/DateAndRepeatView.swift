@@ -10,7 +10,7 @@ import UIKit
 class DateAndRepeatView: UIView {
     
     private let dataLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Date"
         label.font = .robotoMedium18()
         label.textColor = .specialGray
@@ -18,12 +18,12 @@ class DateAndRepeatView: UIView {
         return label
     }()
     
-     let datePicker: UIDatePicker = {
+    let datePicker: UIDatePicker = {
         let dataPicker = UIDatePicker()
         dataPicker.datePickerMode = .date
         dataPicker.tintColor = .specialGreen
         dataPicker.translatesAutoresizingMaskIntoConstraints = false
-       return dataPicker
+        return dataPicker
     }()
     
     private let repeatLabel: UILabel = {
@@ -35,8 +35,8 @@ class DateAndRepeatView: UIView {
         return label
     }()
     
-     let repeatSwitch: UISwitch = {
-       let repeatSwitch = UISwitch()
+    let repeatSwitch: UISwitch = {
+        let repeatSwitch = UISwitch()
         repeatSwitch.isOn = true
         repeatSwitch.onTintColor = .specialGreen
         repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
@@ -49,9 +49,9 @@ class DateAndRepeatView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-    
-    setupViews()
-    setConstraints()
+        
+        setupViews()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -70,18 +70,13 @@ class DateAndRepeatView: UIView {
         addSubview(dateStackView)
         
         repeatStackView = UIStackView(arrangedSubviews: [repeatLabel,
-                                                        repeatSwitch],
+                                                         repeatSwitch],
                                       axis: .horizontal,
                                       spacing: 10)
         addSubview(repeatStackView)
     }
-    
-    @objc private func datePickerTap() {
-        print("dataPicker")
-}
-    
+
     private func setConstraints() {
-        
         NSLayoutConstraint.activate([
             dateStackView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             dateStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
@@ -94,5 +89,4 @@ class DateAndRepeatView: UIView {
             repeatStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
         ])
     }
-    
 }

@@ -22,7 +22,7 @@ class WorkoutTableViewCell: UITableViewCell {
     }()
     
     private let workoutBackgroundView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = .specialBackground
         view.layer.cornerRadius = 20
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +37,7 @@ class WorkoutTableViewCell: UITableViewCell {
     }()
     
     private let workoutNameLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Pull Ups"
         label.textColor = .specialBlack
         label.font = .robotoMedium22()
@@ -46,7 +46,7 @@ class WorkoutTableViewCell: UITableViewCell {
     }()
     
     private let workoutRepsLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Reps: 10"
         label.textColor = .specialGray
         label.font = .robotoMedium16()
@@ -55,7 +55,7 @@ class WorkoutTableViewCell: UITableViewCell {
     }()
     
     private let workoutSetsLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Sets: 2"
         label.textColor = .specialGray
         label.font = .robotoMedium16()
@@ -108,7 +108,7 @@ class WorkoutTableViewCell: UITableViewCell {
     @objc private func startButtonTapped() {
         cellStartWorkoutDelegate?.startButtonTapped(model: workoutModel)
     }
-
+    
     func cellConfigure(model: WorkoutModel) {
         workoutModel = model
         
@@ -138,7 +138,6 @@ class WorkoutTableViewCell: UITableViewCell {
     }
     
     private func setConstraints() {
-        
         NSLayoutConstraint.activate([
             backgroundCell.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             backgroundCell.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),

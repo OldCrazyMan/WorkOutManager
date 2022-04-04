@@ -85,8 +85,8 @@ class StatisticViewController: UIViewController {
     private var workoutArray: Results<WorkoutModel>!
     
     private var differenceArray = [DifferenceWorkout]()
-    
     private var filteredArray = [DifferenceWorkout]()
+    
     private var isFiltred = false
     
     private let dateToday = Date().localDate()
@@ -137,7 +137,6 @@ class StatisticViewController: UIViewController {
         let nameArray = getWorkoutName()
         
         for name in nameArray {
-            
             let predicateDifference = NSPredicate(format: "workoutName = '\(name)' AND workoutDate BETWEEN %@", [dateStart, dateEnd])
             workoutArray = localRealm.objects(WorkoutModel.self).filter(predicateDifference).sorted(byKeyPath: "workoutDate")
             
@@ -184,7 +183,6 @@ class StatisticViewController: UIViewController {
             }
         }
     }
-    
 }
 
 //MARK: - UITableViewDataSource
@@ -228,7 +226,7 @@ extension StatisticViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-       isFiltred = false
+        isFiltred = false
         differenceArray = [DifferenceWorkout]()
         getDifferenceModel(dateStart: dateToday.offSetDays(days: 7))
         tableView.reloadData()
@@ -241,7 +239,6 @@ extension StatisticViewController: UITextFieldDelegate {
 extension StatisticViewController {
     
     private func setConstraints() {
-        
         NSLayoutConstraint.activate([
             statisticsLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             statisticsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)

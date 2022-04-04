@@ -19,4 +19,3 @@ class WorkoutModel: Object {
     @Persisted var workoutImage: Data?
     @Persisted var status: Bool = false
 }
-

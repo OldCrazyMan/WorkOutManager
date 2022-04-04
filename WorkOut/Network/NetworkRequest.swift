@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class NetworkRequest {
     
     static let shared = NetworkRequest()

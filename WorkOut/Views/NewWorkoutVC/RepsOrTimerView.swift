@@ -56,7 +56,7 @@ class RepsOrTimerView: UIView {
         return label
     }()
     
-     let numberOfRepsLabel: UILabel = {
+    let numberOfRepsLabel: UILabel = {
         let label = UILabel()
         label.text = "0"
         label.font = .robotoMedium24()
@@ -85,7 +85,7 @@ class RepsOrTimerView: UIView {
         return label
     }()
     
-     let numberOfTimeLabel: UILabel = {
+    let numberOfTimeLabel: UILabel = {
         let label = UILabel()
         label.text = "0 min"
         label.font = .robotoMedium24()
@@ -183,7 +183,7 @@ class RepsOrTimerView: UIView {
     }
     
     private func setConstraints() {
-      
+        
         NSLayoutConstraint.activate([
             setsStackView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             setsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),

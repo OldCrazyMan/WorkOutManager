@@ -55,7 +55,7 @@ class TimerWorkoutView: UIView {
     
     let numberOfTimerLabel: UILabel = {
         let label = UILabel()
-       // label.text = "1 min 20 sec"
+        // label.text = "1 min 20 sec"
         label.font = .robotoMedium24()
         label.textColor = .specialGray
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -148,10 +148,9 @@ class TimerWorkoutView: UIView {
         cellNextSetTimerDelegate?.nextSetTimerTapped()
     }
     
+    //MARK: - SetConstraints
     
-    //MARK: - setConstraints
     private func setConstraints() {
-        
         NSLayoutConstraint.activate([
             workoutNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             workoutNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),

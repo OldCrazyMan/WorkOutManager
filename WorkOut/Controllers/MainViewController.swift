@@ -159,7 +159,8 @@ class MainViewController: UIViewController {
             userPhotoImageView.image = image
         }
     }
-//MARK: - Realm calendar
+    
+    //MARK: - Realm calendar
     
     private func getWorkouts(date: Date) {
         
@@ -173,11 +174,11 @@ class MainViewController: UIViewController {
         let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnrepeat])
         
         workoutArray = localRealm.objects(WorkoutModel.self).filter(compound).sorted(byKeyPath: "workoutName")
-       
+        
         checkWorkoutToday()
         tableView.reloadData()
     }
-  
+    
     private func checkWorkoutToday() {
         if workoutArray.count == 0 {
             tableView.isHidden = true
@@ -188,7 +189,7 @@ class MainViewController: UIViewController {
             tableView.reloadData()
         }
     }
-
+    
     private func showOnboarding() {
         let userDefaults = UserDefaults.standard
         let onBoardingWasViewed = userDefaults.bool(forKey: "OnBoardingWasViewed")
@@ -269,19 +270,16 @@ extension MainViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
         let action = UIContextualAction(style: .destructive, title: "") { _, _, _ in
             let deleteModel = self.workoutArray[indexPath.row]
             RealmManager.shared.deleteWorkoutModel(model: deleteModel)
             tableView.reloadData()
         }
-        
         action.backgroundColor = .specialBackground
         action.image = UIImage(named: "delete")
         
         return UISwipeActionsConfiguration(actions: [action])
     }
-    
 }
 
 //MARK: - Set constrains

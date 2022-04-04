@@ -24,7 +24,7 @@ extension Date {
     func startEndDate() -> (Date, Date) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
-      //  formatter.timeZone = TimeZone(abbreviation: "UTC")
+        //  formatter.timeZone = TimeZone(abbreviation: "UTC")
         
         let calendar = Calendar.current
         let day = calendar.component(.day, from: self)

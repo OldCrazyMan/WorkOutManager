@@ -9,15 +9,8 @@ import UIKit
 
 class StatisticsTableViewCell: UITableViewCell {
     
-//    private let backgroundCell: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = .specialBackground
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
-    
     private let workoutNameLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Pull Ups"
         label.textColor = .specialGray
         label.font = .robotoMedium22()
@@ -26,7 +19,7 @@ class StatisticsTableViewCell: UITableViewCell {
     }()
     
     private let beforeLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Before: 2"
         label.textColor = .specialBrown
         label.font = .robotoMedium14()
@@ -35,7 +28,7 @@ class StatisticsTableViewCell: UITableViewCell {
     }()
     
     private let nowLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Now: 2"
         label.textColor = .specialBrown
         label.font = .robotoMedium14()
@@ -44,7 +37,7 @@ class StatisticsTableViewCell: UITableViewCell {
     }()
     
     private let differenceLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.textColor = .specialYellow
         label.font = .robotoMedium24()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -78,7 +71,7 @@ class StatisticsTableViewCell: UITableViewCell {
         addSubview(differenceLabel)
     }
     
-        func cellConfigure(differenceWorkout: DifferenceWorkout) {
+    func cellConfigure(differenceWorkout: DifferenceWorkout) {
         workoutNameLabel.text = differenceWorkout.name
         beforeLabel.text = "Before: \(differenceWorkout.firstReps)"
         nowLabel.text = "Now: \(differenceWorkout.lastReps)"
@@ -93,9 +86,8 @@ class StatisticsTableViewCell: UITableViewCell {
             differenceLabel.textColor = .specialGray
         }
     }
-
+    
     private func setConstraints() {
-        
         NSLayoutConstraint.activate([
             workoutNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             workoutNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
@@ -111,5 +103,5 @@ class StatisticsTableViewCell: UITableViewCell {
             differenceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 20),
             differenceLabel.widthAnchor.constraint(equalToConstant: 60)
         ])
-    } 
+    }
 }

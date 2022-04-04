@@ -97,9 +97,9 @@ class CustomAlert {
         let repsOrTimerLabel = UILabel(text: "\(repsOrTimer)")
         repsOrTimerLabel.translatesAutoresizingMaskIntoConstraints = true
         repsOrTimerLabel.frame = CGRect(x: 30,
-                                 y: setsTextField.frame.maxY + 3,
-                                 width: alertView.frame.width - 60,
-                                 height: 20)
+                                        y: setsTextField.frame.maxY + 3,
+                                        width: alertView.frame.width - 60,
+                                        height: 20)
         alertView.addSubview(repsOrTimerLabel)
         
         repsTextField.frame = CGRect(x: 20,

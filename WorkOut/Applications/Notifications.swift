@@ -27,8 +27,7 @@ class Notifications: NSObject {
     }
     
     func scheduleDateNotification(date: Date, id: String) {
-     
-       let content = UNMutableNotificationContent()
+        let content = UNMutableNotificationContent()
         content.title = "WORKOUT"
         content.body = "Today you have training"
         content.sound = .default
@@ -36,16 +35,12 @@ class Notifications: NSObject {
         
         var calendar = Calendar.current
         calendar.timeZone = TimeZone(abbreviation: "UTC")!
+       
         var triggerDate = calendar.dateComponents([.year, .month, .day], from: date)
         triggerDate.hour = 07
         triggerDate.minute = 00
         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-        
-//        var triggerDate = Calendar.current.dateComponents([.year, .month, .day], from: date)
-//        triggerDate.hour = 16
-//        triggerDate.minute = 00
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: true)
-        
+    
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         notificationCenter.add(request) { error in
             print("Error \(String(describing: error?.localizedDescription))")
@@ -61,7 +56,5 @@ extension Notifications: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         UIApplication.shared.applicationIconBadgeNumber = 0
         notificationCenter.removeAllDeliveredNotifications()
-        
     }
-    }
-
+}

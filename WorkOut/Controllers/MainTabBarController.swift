@@ -43,5 +43,4 @@ class MainTabBarController: UITabBarController {
         
         UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont(name: "Roboto-bold", size: 12) as Any], for: .normal)
     }
-    
 }

@@ -17,16 +17,16 @@ class WeatherView: UIView {
     }()
     
     let townLabel: UILabel = {
-       let label = UILabel()
-       label.text = "Калининград"
-       label.adjustsFontSizeToFitWidth = true
+        let label = UILabel()
+        label.text = "Калининград"
+        label.adjustsFontSizeToFitWidth = true
         label.textColor = .specialDarkGreen
-       label.font = .robotoMedium14()
-       label.translatesAutoresizingMaskIntoConstraints = false
-       return label
-   }()
+        label.font = .robotoMedium14()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
-     let weatherLabel: UILabel = {
+    let weatherLabel: UILabel = {
         let label = UILabel()
         label.text = "Sunshine"
         label.adjustsFontSizeToFitWidth = true
@@ -46,7 +46,7 @@ class WeatherView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -62,6 +62,7 @@ class WeatherView: UIView {
         backgroundColor = .tertiarySystemGroupedBackground
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
+        
         addShadowOnView()
         addSubview(townLabel)
         addSubview(weatherLabel)
@@ -70,8 +71,8 @@ class WeatherView: UIView {
     }
     
     //MARK: - SetConstraints
+    
     private func setConstraints() {
-        
         NSLayoutConstraint.activate([
             weatherImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             weatherImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
@@ -83,14 +84,14 @@ class WeatherView: UIView {
             townLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             townLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             townLabel.trailingAnchor.constraint(equalTo: weatherImageView.leadingAnchor, constant: 10),
-          //  townLabel.heightAnchor.constraint(equalToConstant: 20)
+            //  townLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
         
         NSLayoutConstraint.activate([
             weatherLabel.topAnchor.constraint(equalTo:townLabel.bottomAnchor, constant: 5),
             weatherLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             weatherLabel.trailingAnchor.constraint(equalTo: weatherImageView.leadingAnchor, constant: 10),
-        //    weatherLabel.heightAnchor.constraint(equalToConstant: 20)
+            //    weatherLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
         
         NSLayoutConstraint.activate([

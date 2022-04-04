@@ -20,7 +20,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     }()
     
     private let workoutImageView: UIImageView = {
-       let imageView = UIImageView()
+        let imageView = UIImageView()
         imageView.image = UIImage(named: "1")?.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = .white
         imageView.contentMode = .scaleAspectFit
@@ -67,6 +67,8 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         workoutImageView.image = image
     }
     
+    //MARK: - SetConstraints
+    
     private func setConstraints() {
         
         NSLayoutConstraint.activate([
@@ -87,4 +89,3 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         ])
     }
 }
-
