@@ -79,10 +79,10 @@ class CustomAlert {
                                      y: setsLabel.frame.maxY,
                                      width: alertView.frame.width - 40,
                                      height: 30)
-        setsTextField.backgroundColor = .specialLightBrown
+        setsTextField.backgroundColor = .specialGray
         setsTextField.borderStyle = .none
         setsTextField.layer.cornerRadius = 10
-        setsTextField.textColor = .specialGray
+        setsTextField.textColor = .specialBlack
         setsTextField.font = .robotoBold20()
         setsTextField.leftView = UIView(frame: CGRect(x: 0,
                                                       y: 0,
@@ -92,6 +92,7 @@ class CustomAlert {
         setsTextField.clearButtonMode = .always
         setsTextField.returnKeyType = .done
         setsTextField.keyboardType = .numberPad
+        setsTextField.addShadowOnView()
         alertView.addSubview(setsTextField)
         
         let repsOrTimerLabel = UILabel(text: "\(repsOrTimer)")
@@ -106,11 +107,12 @@ class CustomAlert {
                                      y: repsOrTimerLabel.frame.maxY,
                                      width: alertView.frame.width - 40,
                                      height: 30)
-        repsTextField.backgroundColor = .specialLightBrown
+        repsTextField.backgroundColor = .specialGray
         repsTextField.borderStyle = .none
         repsTextField.layer.cornerRadius = 10
-        repsTextField.textColor = .specialGray
+        repsTextField.textColor = .specialBlack
         repsTextField.font = .robotoBold20()
+        repsTextField.addShadowOnView()
         repsTextField.leftView = UIView(frame: CGRect(x: 0,
                                                       y: 0,
                                                       width: 15,
@@ -131,6 +133,7 @@ class CustomAlert {
         okButton.titleLabel?.font = .robotoMedium18()
         okButton.layer.cornerRadius = 10
         okButton.addTarget(self, action: #selector(dismisAlert), for: .touchUpInside)
+        okButton.addShadowOnView()
         alertView.addSubview(okButton)
         
         buttonAction = completion

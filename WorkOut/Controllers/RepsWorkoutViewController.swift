@@ -12,7 +12,7 @@ class RepsWorkoutViewController: UIViewController {
     private let newWorkoutLabel: UILabel = {
         let label = UILabel()
         label.text = "START WORKOUT"
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.font = .robotoMedium24()
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -24,6 +24,7 @@ class RepsWorkoutViewController: UIViewController {
         button.setBackgroundImage(UIImage(named: "сloseButton"), for: .normal)
         button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addShadowOnView()
         return button
     }()
     
@@ -35,26 +36,21 @@ class RepsWorkoutViewController: UIViewController {
         return imageView
     }()
     
-    private let detailsLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Details"
-        label.textColor = .specialBrown
-        label.font = .robotoMedium14()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
+ 
     private lazy var finishButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .specialGreen
         button.setTitle("FINISH", for: .normal)
-        button.titleLabel?.font = .robotoMedium16()
+        button.titleLabel?.font = .robotoBold16()
         button.tintColor = .white
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(finishButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addShadowOnView()
         return button
     }()
+    
+    private let detailsLabel = UILabel(text: "Details")
     
     let workoutParametersView = WorkoutParametersView()
     
@@ -181,7 +177,7 @@ extension RepsWorkoutViewController {
             finishButton.topAnchor.constraint(equalTo: workoutParametersView.bottomAnchor, constant: 20),
             finishButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             finishButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            finishButton.heightAnchor.constraint(equalToConstant: 55),
+            finishButton.heightAnchor.constraint(equalToConstant: 55)
         ])
     }
 }

@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
     private let profileLabel: UILabel = {
         let label = UILabel()
         label.text = "PROFILE"
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.font = .robotoMedium24()
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController {
     
     private let userPhotoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = #colorLiteral(red: 0.7607843137, green: 0.7607843137, blue: 0.7607843137, alpha: 1)
+        imageView.backgroundColor = .specialBackground
         imageView.layer.borderWidth = 5
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.contentMode = .scaleAspectFit
@@ -154,7 +154,7 @@ class ProfileViewController: UIViewController {
     
     private let progressView: UIProgressView = {
         let progressView = UIProgressView(progressViewStyle: .bar)
-        progressView.trackTintColor = .specialLightBrown
+        progressView.trackTintColor = .specialGray
         progressView.progressTintColor = .specialGreen
         progressView.layer.cornerRadius = 14
         progressView.clipsToBounds = true
@@ -175,17 +175,18 @@ class ProfileViewController: UIViewController {
     private var userArray: Results<UserModel>!
 
     private var resultWorkout = [ResultWorkout]()
+   
+    override func viewDidLayoutSubviews() {
+        userPhotoImageView.layer.cornerRadius = userPhotoImageView.frame.width / 2
+    }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewWillAppear(true)
         
         setupUserParameters()
         collectionView.reloadData()
     }
     
-    override func viewDidLayoutSubviews() {
-        userPhotoImageView.layer.cornerRadius = userPhotoImageView.frame.width / 2
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

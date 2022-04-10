@@ -18,10 +18,11 @@ class TimerWorkoutView: UIView {
     let workoutNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Squats"
+        label.underline()
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         label.font = .robotoMedium22()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -30,16 +31,15 @@ class TimerWorkoutView: UIView {
         let label = UILabel()
         label.text = "Sets"
         label.font = .robotoMedium18()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     let numberOfSetsLabel: UILabel = {
         let label = UILabel()
-        label.text = "1/4"
         label.font = .robotoMedium24()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -48,16 +48,15 @@ class TimerWorkoutView: UIView {
         let label = UILabel()
         label.text = "Time of set"
         label.font = .robotoMedium18()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     let numberOfTimerLabel: UILabel = {
         let label = UILabel()
-        // label.text = "1 min 20 sec"
         label.font = .robotoMedium24()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -117,7 +116,7 @@ class TimerWorkoutView: UIView {
     }
     
     private func setupViews() {
-        backgroundColor = .specialLightBrown
+        backgroundColor = .specialGray
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
         

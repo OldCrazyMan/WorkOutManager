@@ -21,8 +21,9 @@ class WorkoutParametersView: UIView {
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         label.font = .robotoMedium22()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.underline()
         return label
     }()
     
@@ -30,7 +31,7 @@ class WorkoutParametersView: UIView {
         let label = UILabel()
         label.text = "Sets"
         label.font = .robotoMedium18()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -39,7 +40,7 @@ class WorkoutParametersView: UIView {
         let label = UILabel()
         label.text = "1/4"
         label.font = .robotoMedium24()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -48,7 +49,7 @@ class WorkoutParametersView: UIView {
         let label = UILabel()
         label.text = "Reps"
         label.font = .robotoMedium18()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -57,7 +58,7 @@ class WorkoutParametersView: UIView {
         let label = UILabel()
         label.text = "20"
         label.font = .robotoMedium24()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -78,8 +79,7 @@ class WorkoutParametersView: UIView {
     
     private lazy var editingButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = .none
-        button.setImage(UIImage(named: "editing"), for: .normal)
+        button.setImage(UIImage(named: "editing")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.setTitle("Editing", for: .normal)
         button.titleLabel?.font = .robotoMedium14()
         button.tintColor = .specialDarkGreen
@@ -100,8 +100,8 @@ class WorkoutParametersView: UIView {
         return button
     }()
     
-    var repsStackView = UIStackView()
     var setsStackView = UIStackView()
+    var repsStackView = UIStackView()
     
     weak var cellNextSetDelegate: NextSetProtocol?
     
@@ -117,23 +117,26 @@ class WorkoutParametersView: UIView {
     }
     
     private func setupViews() {
-        backgroundColor = .specialLightBrown
+        backgroundColor = .specialGray
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
+        addShadowOnView()
         
         addSubview(workoutNameLabel)
+        
         setsStackView = UIStackView(arrangedSubviews: [setsLabel,
                                                        numberOfSetsLabel],
                                     axis: .horizontal,
                                     spacing: 10)
         addSubview(setsStackView)
         addSubview(setsLineView)
+        
         repsStackView = UIStackView(arrangedSubviews: [repsLabel,
                                                        numberOfRepsLabel],
                                     axis: .horizontal,
                                     spacing: 10)
-        addSubview(repsLineView)
         addSubview(repsStackView)
+        addSubview(repsLineView)
         addSubview(editingButton)
         addSubview(nextSetButton)
     }
@@ -170,7 +173,7 @@ class WorkoutParametersView: UIView {
         NSLayoutConstraint.activate([
             repsStackView.topAnchor.constraint(equalTo: setsLineView.bottomAnchor, constant: 20),
             repsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            repsStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            repsStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
             repsStackView.heightAnchor.constraint(equalToConstant: 25)
         ])
         
@@ -190,8 +193,8 @@ class WorkoutParametersView: UIView {
         
         NSLayoutConstraint.activate([
             nextSetButton.topAnchor.constraint(equalTo: editingButton.bottomAnchor, constant: 10),
-            nextSetButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             nextSetButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            nextSetButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             nextSetButton.heightAnchor.constraint(equalToConstant: 45)
         ])
     }

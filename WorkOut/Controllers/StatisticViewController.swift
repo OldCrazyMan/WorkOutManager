@@ -19,7 +19,7 @@ class StatisticViewController: UIViewController {
     private let statisticsLabel: UILabel = {
         let label = UILabel()
         label.text = "STATISTICS"
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.font = .robotoMedium24()
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -45,16 +45,18 @@ class StatisticViewController: UIViewController {
     
     private let nameTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = .specialLightBrown
+        textField.backgroundColor = .specialGray
+        textField.placeholder = "Exercise..."
         textField.borderStyle = .none
         textField.layer.cornerRadius = 10
-        textField.textColor = .specialGray
+        textField.textColor = .specialBrown
         textField.font = .robotoBold20()
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: textField.frame.height))
         textField.leftViewMode = .always
         textField.clearButtonMode = .always
         textField.returnKeyType = .done
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addShadowOnView()
         return textField
     }()
     

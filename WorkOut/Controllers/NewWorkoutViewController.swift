@@ -20,7 +20,7 @@ class NewWorkoutViewController: UIViewController {
     private let newWorkoutLabel: UILabel = {
         let label = UILabel()
         label.text = "NEW WORKOUT"
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.font = .robotoMedium24()
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -32,44 +32,30 @@ class NewWorkoutViewController: UIViewController {
         button.setBackgroundImage(UIImage(named: "сloseButton"), for: .normal)
         button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addShadowOnView()
         return button
     }()
     
     private let nameLabel = UILabel(text: "Name")
+    private let dateAndRepeatLabel = UILabel(text: "Date and repeat")
+    private let repsOrTimerLabel = UILabel(text: "Reps or timer")
     
     private let nameTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = .specialLightBrown
+        textField.backgroundColor = .specialGray
         textField.borderStyle = .none
         textField.layer.cornerRadius = 10
-        textField.textColor = .specialGray
+        textField.textColor = .specialBlack
         textField.font = .robotoBold20()
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: textField.frame.height))
         textField.leftViewMode = .always
         textField.clearButtonMode = .always
         textField.returnKeyType = .done
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addShadowOnView()
         return textField
     }()
-    
-    private let dateAndRepeatLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Date and repeat"
-        label.textColor = .specialBrown
-        label.font = .robotoMedium14()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let repsOrTimerLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Reps or timer"
-        label.textColor = .specialBrown
-        label.font = .robotoMedium14()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
+        
     private lazy var saveButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .specialGreen
@@ -79,6 +65,7 @@ class NewWorkoutViewController: UIViewController {
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addShadowOnView()
         return button
     }()
     
@@ -261,7 +248,7 @@ extension NewWorkoutViewController {
             dateAndRepeatView.topAnchor.constraint(equalTo: dateAndRepeatLabel.bottomAnchor, constant: 3),
             dateAndRepeatView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             dateAndRepeatView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            dateAndRepeatView.heightAnchor.constraint(equalToConstant: 94)
+            dateAndRepeatView.heightAnchor.constraint(equalToConstant: 110)
         ])
         
         NSLayoutConstraint.activate([

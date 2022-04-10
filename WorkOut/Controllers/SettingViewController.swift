@@ -14,7 +14,7 @@ class SettingViewController: UIViewController {
         let label = UILabel()
         label.text = "EDITING PROFILE"
         label.font = .robotoMedium24()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -25,6 +25,7 @@ class SettingViewController: UIViewController {
         button.setBackgroundImage(UIImage(named: "сloseButton"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+        button.addShadowOnView()
         return button
     }()
     
@@ -52,7 +53,7 @@ class SettingViewController: UIViewController {
     
     private let firstNameTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = .specialLightBrown
+        textField.backgroundColor = .specialGray
         textField.borderStyle = .none
         textField.layer.cornerRadius = 10
         textField.textColor = .specialBlack
@@ -63,6 +64,7 @@ class SettingViewController: UIViewController {
         textField.clearButtonMode = .always
         textField.returnKeyType = .done
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addShadowOnView()
         return textField
     }()
     
@@ -70,7 +72,7 @@ class SettingViewController: UIViewController {
     
     private let secondNameTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = .specialLightBrown
+        textField.backgroundColor = .specialGray
         textField.borderStyle = .none
         textField.layer.cornerRadius = 10
         textField.textColor = .specialBlack
@@ -81,6 +83,7 @@ class SettingViewController: UIViewController {
         textField.clearButtonMode = .always
         textField.returnKeyType = .done
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addShadowOnView()
         return textField
     }()
     
@@ -88,7 +91,7 @@ class SettingViewController: UIViewController {
     
     private let heightTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = .specialLightBrown
+        textField.backgroundColor = .specialGray
         textField.borderStyle = .none
         textField.layer.cornerRadius = 10
         textField.textColor = .specialBlack
@@ -99,6 +102,7 @@ class SettingViewController: UIViewController {
         textField.returnKeyType = .done
         textField.keyboardType = .numberPad
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addShadowOnView()
         return textField
     }()
     
@@ -106,7 +110,7 @@ class SettingViewController: UIViewController {
     
     private let weightTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = .specialLightBrown
+        textField.backgroundColor = .specialGray
         textField.borderStyle = .none
         textField.layer.cornerRadius = 10
         textField.textColor = .specialBlack
@@ -117,6 +121,7 @@ class SettingViewController: UIViewController {
         textField.returnKeyType = .done
         textField.keyboardType = .numberPad
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addShadowOnView()
         return textField
     }()
     
@@ -124,7 +129,7 @@ class SettingViewController: UIViewController {
     
     private let targetTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = .specialLightBrown
+        textField.backgroundColor = .specialGray
         textField.borderStyle = .none
         textField.layer.cornerRadius = 10
         textField.textColor = .specialBlack
@@ -135,6 +140,7 @@ class SettingViewController: UIViewController {
         textField.returnKeyType = .done
         textField.keyboardType = .numberPad
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addShadowOnView()
         return textField
     }()
     
@@ -147,6 +153,7 @@ class SettingViewController: UIViewController {
         button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        button.addShadowOnView()
         return button
     }()
     

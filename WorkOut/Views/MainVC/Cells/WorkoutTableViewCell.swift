@@ -16,8 +16,9 @@ class WorkoutTableViewCell: UITableViewCell {
     private let backgroundCell: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 20
-        view.backgroundColor = .specialLightBrown
+        view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addShadowOnView()
         return view
     }()
     
@@ -48,7 +49,7 @@ class WorkoutTableViewCell: UITableViewCell {
     private let workoutRepsLabel: UILabel = {
         let label = UILabel()
         label.text = "Reps: 10"
-        label.textColor = .specialGray
+        label.textColor = .specialLightBrown
         label.font = .robotoMedium16()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -57,7 +58,7 @@ class WorkoutTableViewCell: UITableViewCell {
     private let workoutSetsLabel: UILabel = {
         let label = UILabel()
         label.text = "Sets: 2"
-        label.textColor = .specialGray
+        label.textColor = .specialLightBrown
         label.font = .robotoMedium16()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         label.numberOfLines = 3
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.font = .robotoMedium22()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -57,8 +57,8 @@ class MainViewController: UIViewController {
     
     private let workoutTodayLabel: UILabel = {
         let label = UILabel()
-        label.text = "Workout today"
-        label.textColor = .specialLightBrown
+        label.text = "Workout today:"
+        label.textColor = .specialBrown
         label.font = .robotoMedium14()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -98,16 +98,11 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewWillAppear(true)
         
         tableView.reloadData()
         setupUserParameters()
         getWeather()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
         showOnboarding()
     }
     
@@ -307,7 +302,7 @@ extension MainViewController {
         ])
         
         NSLayoutConstraint.activate([
-            addWorkoutButton.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 5),
+            addWorkoutButton.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 10),
             addWorkoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             addWorkoutButton.heightAnchor.constraint(equalToConstant: 80),
             addWorkoutButton.widthAnchor.constraint(equalToConstant: 80)
@@ -315,7 +310,7 @@ extension MainViewController {
         
         NSLayoutConstraint.activate([
             weatherView.leadingAnchor.constraint(equalTo: addWorkoutButton.trailingAnchor, constant: 10),
-            weatherView.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 5),
+            weatherView.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 10),
             weatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             weatherView.heightAnchor.constraint(equalToConstant: 80)
         ])

@@ -13,7 +13,7 @@ class RepsOrTimerView: UIView {
         let label = UILabel()
         label.text = "Sets"
         label.font = .robotoMedium18()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -22,7 +22,7 @@ class RepsOrTimerView: UIView {
         let label = UILabel()
         label.text = "0"
         label.font = .robotoMedium24()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -30,8 +30,8 @@ class RepsOrTimerView: UIView {
     lazy var setsSlider: UISlider = {
         let slider = UISlider()
         slider.minimumValue = 0
-        slider.maximumValue = 10
-        slider.minimumTrackTintColor = .specialGray
+        slider.maximumValue = 20
+        slider.minimumTrackTintColor = .specialDarkGreen
         slider.maximumTrackTintColor = .specialGreen
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.addTarget(self, action: #selector(setsSliderChanged), for: .valueChanged)
@@ -40,9 +40,10 @@ class RepsOrTimerView: UIView {
     
     private let repeatOrTimeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Choose repeat or time"
+        label.text = "Choose repeat or timer"
+        label.underline()
         label.font = .robotoMedium16()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -51,7 +52,7 @@ class RepsOrTimerView: UIView {
         let label = UILabel()
         label.text = "Reps"
         label.font = .robotoMedium18()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -60,7 +61,7 @@ class RepsOrTimerView: UIView {
         let label = UILabel()
         label.text = "0"
         label.font = .robotoMedium24()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -69,7 +70,7 @@ class RepsOrTimerView: UIView {
         let slider = UISlider()
         slider.minimumValue = 0
         slider.maximumValue = 50
-        slider.minimumTrackTintColor = .specialGray
+        slider.minimumTrackTintColor = .specialDarkGreen
         slider.maximumTrackTintColor = .specialGreen
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.addTarget(self, action: #selector(repsSliderChanged), for: .valueChanged)
@@ -80,7 +81,7 @@ class RepsOrTimerView: UIView {
         let label = UILabel()
         label.text = "Timer"
         label.font = .robotoMedium18()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -89,7 +90,7 @@ class RepsOrTimerView: UIView {
         let label = UILabel()
         label.text = "0 min"
         label.font = .robotoMedium24()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -98,7 +99,7 @@ class RepsOrTimerView: UIView {
         let slider = UISlider()
         slider.minimumValue = 0
         slider.maximumValue = 600
-        slider.minimumTrackTintColor = .specialGray
+        slider.minimumTrackTintColor = .specialDarkGreen
         slider.maximumTrackTintColor = .specialGreen
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.addTarget(self, action: #selector(timerSliderChanged), for: .valueChanged)
@@ -121,9 +122,10 @@ class RepsOrTimerView: UIView {
     }
     
     private func setupViews() {
-        backgroundColor = .specialLightBrown
+        backgroundColor = .specialGray
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
+        addShadowOnView()
         
         setsStackView = UIStackView(arrangedSubviews: [setsLabel,
                                                        numberOfSetLabel],
@@ -185,7 +187,7 @@ class RepsOrTimerView: UIView {
     private func setConstraints() {
         
         NSLayoutConstraint.activate([
-            setsStackView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            setsStackView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             setsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             setsStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
         ])
@@ -202,7 +204,7 @@ class RepsOrTimerView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            repsStackView.topAnchor.constraint(equalTo: repeatOrTimeLabel.bottomAnchor, constant: 15),
+            repsStackView.topAnchor.constraint(equalTo: repeatOrTimeLabel.bottomAnchor, constant: 5),
             repsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             repsStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
         ])

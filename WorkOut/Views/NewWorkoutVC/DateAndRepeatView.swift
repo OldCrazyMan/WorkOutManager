@@ -13,7 +13,7 @@ class DateAndRepeatView: UIView {
         let label = UILabel()
         label.text = "Date"
         label.font = .robotoMedium18()
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -38,13 +38,12 @@ class DateAndRepeatView: UIView {
     let repeatSwitch: UISwitch = {
         let repeatSwitch = UISwitch()
         repeatSwitch.isOn = true
-        repeatSwitch.onTintColor = .specialGreen
+        repeatSwitch.onTintColor = .specialDarkGreen
         repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
         return repeatSwitch
     }()
     
     var dateStackView = UIStackView()
-    
     var repeatStackView = UIStackView()
     
     override init(frame: CGRect) {
@@ -59,9 +58,10 @@ class DateAndRepeatView: UIView {
     }
     
     private func setupViews() {
-        backgroundColor = .specialLightBrown
+        backgroundColor = .specialGray
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
+        addShadowOnView()
         
         dateStackView = UIStackView(arrangedSubviews: [dataLabel,
                                                        datePicker],
@@ -78,13 +78,13 @@ class DateAndRepeatView: UIView {
 
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            dateStackView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            dateStackView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             dateStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             dateStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
         ])
         
         NSLayoutConstraint.activate([
-            repeatStackView.topAnchor.constraint(equalTo: dateStackView.bottomAnchor, constant: 5),
+            repeatStackView.topAnchor.constraint(equalTo: dateStackView.bottomAnchor, constant: 10),
             repeatStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             repeatStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
         ])

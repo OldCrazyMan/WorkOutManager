@@ -12,7 +12,7 @@ class TimerWorkoutViewController: UIViewController {
     private let newWorkoutLabel: UILabel = {
         let label = UILabel()
         label.text = "START WORKOUT"
-        label.textColor = .specialGray
+        label.textColor = .specialBlack
         label.font = .robotoMedium24()
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -24,13 +24,14 @@ class TimerWorkoutViewController: UIViewController {
         button.setBackgroundImage(UIImage(named: "сloseButton"), for: .normal)
         button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addShadowOnView()
         return button
     }()
     
     private let ellipseImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "ellipse")
-        imageView.contentMode = .scaleAspectFit
+     //   imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -43,25 +44,18 @@ class TimerWorkoutViewController: UIViewController {
         return label
     }()
     
-    
-    private let detailsLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Details"
-        label.textColor = .specialBrown
-        label.font = .robotoMedium14()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    private let detailsLabel = UILabel(text: "Details")
     
     private lazy var finishButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .specialGreen
         button.setTitle("FINISH", for: .normal)
-        button.titleLabel?.font = .robotoMedium16()
+        button.titleLabel?.font = .robotoBold16()
         button.tintColor = .white
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(finishButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addShadowOnView()
         return button
     }()
     

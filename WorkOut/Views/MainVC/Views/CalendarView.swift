@@ -15,8 +15,10 @@ class CalendarView: UIView {
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
         let collectionVIew = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionVIew.translatesAutoresizingMaskIntoConstraints = false
+        collectionVIew.showsHorizontalScrollIndicator = false
         collectionVIew.backgroundColor = .none
         return collectionVIew
     }()
@@ -43,6 +45,7 @@ class CalendarView: UIView {
         backgroundColor = .specialGreen
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
+        addShadowOnView()
         
         addSubview(collectionView)
     }
@@ -67,8 +70,8 @@ extension CalendarView: UICollectionViewDataSource {
         
         cell.cellConfigure(numberOfDay: weekArray[1][indexPath.item], dayOfWeek: weekArray[0][indexPath.item])
         
-        if indexPath.item == 6 {
-            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .right)
+        if indexPath.item != 6 {
+            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .left)
         }
         return cell
     }
