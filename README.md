@@ -2,6 +2,6 @@
 Pet-project from heart.
 
 The project uses:
-+ Database - Real manager,
++ Database - RealM,
 + Parsing weather data using Json,
 + Code layout (without storyBoard)
